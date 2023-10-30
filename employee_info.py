@@ -28,10 +28,9 @@ def calculate_average_salary():
 
 def get_employees_by_dept(department):
     result = []
-
-    # Add your implementation from here
-
-
+    for employee in employee_data:
+        if employee['department'] == department:
+            result.append(employee)
     return result
 
 def display_all_records():
@@ -45,6 +44,7 @@ def display_records(employee_info):
     for item in employee_info:
         print((item["name"] + "\t" + str(item["age"]) + "\t" + item["department"] + "\t" + str(item["salary"])).expandtabs(15))
 
+
 def display_main_menu():
 
     print("\n----- Employee information Tracker -----")
@@ -55,8 +55,6 @@ def display_main_menu():
     print("2 - Display average salary")
     print("3 - Display employee within age range")
     print("4 - Display employee in a department")
-
-
     print("Q - Quit")
 
     option = input("Enter selection =>")
@@ -73,8 +71,6 @@ def display_main_menu():
         age_upper_limit = input("age (Uper Limit) = ")
         employee_info = get_employees_by_age_range(age_lower_limit, age_upper_limit)
         display_records(employee_info)
-
-
     elif option == '4':
         department = input("Name of Department = ")
         employee_info = get_employees_by_dept(department)
@@ -83,9 +79,10 @@ def display_main_menu():
     elif option == 'Q':
         quit()
 
+
 def main():
 
-    while (True):
+    while True:
         display_main_menu()
 
 
