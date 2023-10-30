@@ -8,6 +8,7 @@ employee_data = [
     {"name": "Peter", "age": 40, "department": "Sales", "salary": 60000}
 ]
 
+
 def get_employees_by_age_range(age_lower_limit, age_upper_limit):
     result = []
 
@@ -18,14 +19,12 @@ def get_employees_by_age_range(age_lower_limit, age_upper_limit):
 
     return result
 
+
 def calculate_average_salary():
-    total = 0
-    average = 0
-
-    #add your implementation to calculate here
-
-
-    return average
+    total_salary = sum(employee['salary'] for employee in employee_data)
+    num_employees = len(employee_data)
+    average_salary = total_salary / num_employees
+    return average_salary
 
 def get_employees_by_dept(department):
     result = []
