@@ -28,3 +28,18 @@ def test_bubble_sort_invalid():
     result = Lab3.bubble_sort(input_arr, 3)
 
     assert (result == [])
+
+def test_list_over10():
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 45, 75, 85, 10]
+    result = Lab3.bubble_sort(input_arr, 3)
+    assert (result == int(1))
+
+def test_list_empty():
+    input_arr = []
+    result = Lab3.bubble_sort(input_arr, 3)
+    assert (result == int(0))
+
+def test_list_not_integer():
+    input_arr = [64, 34, 25, 12, 22.2, 11, 90]
+    result = Lab3.bubble_sort(input_arr, 3)
+    assert (result == int(2))
